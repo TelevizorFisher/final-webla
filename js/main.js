@@ -141,6 +141,19 @@ $(document).ready(function () {
 		return false
 	})
 	/* 	-----Попат телефон */
+	/* 	-----Попат телефон */
+	$(document).on('click', '[data-toggle="modal"]', function () {
+		var target = $(this).attr('data-target')
+		console.log(target)
+		$(target).addClass('show')
+		return false
+	})
+
+	$('.modal-p ._close').on('click', function () {
+		$(this).closest('.modal-p').removeClass('show')
+		return false
+	})
+	/* 	-----Попат телефон */
 
 	/* 	-----Попат Политика */
 
@@ -806,4 +819,15 @@ let _slideToggle = (target, duration = 500) => {
 	} else {
 		return _slideUp(target, duration)
 	}
+}
+function IncreaseHeight() {
+	var first = Document.getElementById('Right').style.height
+	var second = Document.getElementById('Left').style.height
+
+	if (first < second)
+		Document.getElementById('Right').style.height =
+			Document.getElementById('Left').style.height
+	else
+		Document.getElementById('Left').style.height =
+			Document.getElementById('Right').style.height
 }
